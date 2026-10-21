@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Портфолио Семёна</title>
+    <meta name="description" content="Семён — веб-разработчик. Интерфейсы, WebGL и живая графика." />
+    <meta name="theme-color" content="#05080d" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500;700&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
+  </head>
+  <body>
+    <div class="loader" id="loader" aria-hidden="true">
+      <div class="loader__count"><span id="loader-num">000</span><i>%</i></div>
+      <div class="loader__bar"><span id="loader-bar"></span></div>
+      <div class="loader__label">компилирую шейдеры</div>
+    </div>
+
+    <canvas id="gl" aria-hidden="true"></canvas>
+    <div class="grain-fallback" aria-hidden="true"></div>
+
+    <header class="chrome chrome--top">
+      <a class="logo" href="#top" data-hover>
+        <span class="logo__mark" id="logo-mark">СЕМ/ЁН</span>
+      </a>
+      <nav class="nav" aria-label="Разделы">
+        <a href="#about" data-hover>Обо мне</a>
+        <a href="#work" data-hover>Проекты</a>
+        <a href="#stack" data-hover>Стек</a>
+        <a href="#contact" data-hover>Контакт</a>
+      </nav>
+      <div class="clock mono"><span id="city"></span> <span id="clock">--:--:--</span></div>
+    </header>
+
+    <footer class="chrome chrome--bottom mono" aria-hidden="true">
+      <div class="hud">
+        <span id="hud-cam">cam 0.00 0.00 7.00</span>
+        <span id="hud-fps">-- fps</span>
+      </div>
+      <div class="progress">
+        <span id="progress-num">000</span>
+        <span class="progress__track"><span id="progress-bar"></span></span>
+        <span id="section-num">01 / 05</span>
+      </div>
+    </footer>
+
+    <div class="cursor" id="cursor" aria-hidden="true"><span></span></div>
+
+    <main id="top">
+      <section class="section hero" data-stage id="hero"></section>
+      <section class="section about" data-stage id="about"></section>
+      <section class="section work" data-stage id="work"></section>
+      <section class="section stack" data-stage id="stack"></section>
+      <section class="section contact" data-stage id="contact"></section>
+    </main>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
